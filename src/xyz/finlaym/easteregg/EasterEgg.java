@@ -66,6 +66,24 @@ public class EasterEgg {
 		in.close();
 		Date d = format.parse(date);
 		long days = ChronoUnit.DAYS.between(d.toInstant(), currentDate.toInstant());
+		if (days > 365) {
+			// If it has been a year then say hehe
+			File f = new File("C:/Users/"+System.getProperty("user.home")+"/Desktop/README.txt");
+			f.delete();
+			f.createNewFile();
+			PrintWriter out = new PrintWriter(new FileWriter(f,true));
+			out.println("Hehe, you've been meme'd!");
+			out.println("I've been playing the long con and have slowly been changing your background to Danny DeVito!");
+			out.println("Your original wallpaper is located at C:/Temp/wallpaper.png");
+			out.println("I have disabled myself, however if C:/Temp/ is deleted I will reactivate!");
+			out.println("I am located at "+new File(EasterEgg.class.getProtectionDomain().getCodeSource().getLocation()
+				    .toURI()).getAbsolutePath()+" and can be disabled by removing me!");
+			out.println("My source code is located at https://github.com/finlaywashere/EasterEgg");
+			out.println("I think I one upped myself this time");
+			out.println("-Finlay");
+			out.close();
+			return;
+		}
 		if (days > 28) {
 			// After 4 weeks activate
 			BufferedImage currImage = ImageIO.read(wallpaperPath);
