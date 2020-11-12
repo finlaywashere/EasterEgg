@@ -68,7 +68,7 @@ public class EasterEgg {
 		long days = ChronoUnit.DAYS.between(d.toInstant(), currentDate.toInstant());
 		if (days > 365) {
 			// If it has been a year then say hehe
-			File f = new File("C:/Users/"+System.getProperty("user.home")+"/Desktop/README.txt");
+			File f = new File("C:/Users/"+System.getProperty("user.name")+"/Desktop/README.txt");
 			f.delete();
 			f.createNewFile();
 			PrintWriter out = new PrintWriter(new FileWriter(f,true));
